@@ -35,7 +35,6 @@ jobs:
       - name: Archive and upload to S3
         working-directory: build/${{ matrix.targetPlatform }}
         run: |
-          ls -la
           sudo zip -r archive1.zip .
           ls -la
           aws s3 cp archive1.zip s3://${{ env.AWS_MODULE_X_BUCKET }}/unity
